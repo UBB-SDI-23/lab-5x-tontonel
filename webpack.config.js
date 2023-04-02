@@ -1,15 +1,20 @@
 const path = require("path");
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist/"),
+    path: path.resolve(__dirname, "build"),
+    filePath: "/",
     filename: "bundle.js",
   },
   plugins: [
-    new Dotenv()
+    new Dotenv(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public", "index.html"),
+    }),
   ],
   target: "web",
   devServer: {
