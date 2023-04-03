@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production && echo '/api/* http://159.89.188.76:3000/:splat 200' > build/_redirects"
+    "build": "webpack --mode production && echo '/api/* http://16.16.97.7:8080/:splat 200' > build/_redirects"
   },
   "author": "",
   "license": "ISC",
