@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchCars = async () => {
-    const result = await axios.get('/api/car');
+    const result = await fetch('/api/car');
     return result.data;
 }
 
