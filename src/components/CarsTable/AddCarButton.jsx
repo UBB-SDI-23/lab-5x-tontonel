@@ -24,8 +24,9 @@ export default function AddCarButton(props) {
 
     return (
         <>
-            <Container sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", p: "2rem"}}>
+            <Container sx={{ display: "flex", justifyContent: "space-around", alignItems: "center", p: "2rem"}}>
                 <Button variant="contained" color="primary" onClick={() => setIsAddCar(true)}>Add Car</Button>
+                <Button variant="contained" color="primary" onClick={() => props.setCars((prev) => [...prev].sort((car1, car2) => car1.price - car2.price))}>Sort cars</Button>
             </Container>
             <AddCarModal isOpen={isAddCar} handleSave={handelSave} handleCancel={handleCancel}/>
         </>

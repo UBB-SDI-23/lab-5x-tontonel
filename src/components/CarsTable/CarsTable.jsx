@@ -103,7 +103,7 @@ export default function CarsTable() {
       handleSave={handleSave}
       car={cars.find((car) => car.carId == carId)}
     />
-    <AddCarButton setRefresh={setRefresh}/>
+    <AddCarButton setRefresh={setRefresh} setCars={setCars}/>
     </>
   );
 }
