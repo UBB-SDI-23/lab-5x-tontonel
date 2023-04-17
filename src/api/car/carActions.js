@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchCars = async () => {
-    const result = await axios.get(process.env.API_URL + '/api/car');
+export const fetchCars = async (page) => {
+    const result = await axios.get(process.env.API_URL + '/api/car?page=' + page);
     return result.data;
 }
 
@@ -19,5 +19,15 @@ export const createCar = async (car) => {
 
 export const filterCars = async (filter) => {
     const result = await axios.get(process.env.API_URL + '/api/car/filterByYear/' + filter);
+    return result.data;
+}
+
+export const fetchNumberOfCarPages = async () => {
+    const result = await axios.get(process.env.API_URL + '/api/car/numberOfPages');
+    return result.data;
+}
+
+export const fetchCarsSuggestions = async (search) => {
+    const result = await axios.get(process.env.API_URL + '/api/car/autocomplete?make=' + search);
     return result.data;
 }

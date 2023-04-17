@@ -1,8 +1,8 @@
 import React from 'react';
 import { Dialog } from '@mui/material';
-import Form from './CarForm';
 
-export default function EditCarsModal({ isOpen, handleCancel, handleSave, car}) {
+
+export default function EditModal({ isOpen, handleCancel, handleSave, data, Form}) {
     return (
         <Dialog 
             open={isOpen}
@@ -11,8 +11,8 @@ export default function EditCarsModal({ isOpen, handleCancel, handleSave, car}) 
             aria-describedby="modal-modal-description"
         >
             <Form 
+                data={data}
                 handleCancel={handleCancel}
-                car={car}
                 handleSave={handleSave}
              />
         </Dialog>

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { Box, Typography, TextField, IconButton, Container } from "@mui/material";
+import { Box, Typography, TextField, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import useViewModel from "./CarFilterViewModel";
 
-export default function CarFilter({ handleFilter }) {
-    const [filter, setFilter] = useState("");
+export default function CarFilter(props) {
+
+    const { 
+        filter,
+        setFilter,
+        handleFilter
+    } = useViewModel(props);
 
     return (
         <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: "5px"}}>
