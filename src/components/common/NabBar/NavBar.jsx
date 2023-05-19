@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-import useViewModel from "./NavBarViewModel";
+import useViewModel from "./NavbarViewModel";
 
 export default function NavBar(props) {
 
