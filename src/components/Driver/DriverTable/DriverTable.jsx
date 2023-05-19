@@ -11,7 +11,7 @@ export default function DriverTable(props) {
         handleDeleteDriver,
     } = useViewModal(props);
 
-    const driverAttribuites = ["name", "email", "phone", "experience", "options"];
+    const driverAttribuites = ["name", "email", "phone", "experience", "user", "options"];
     return (
         <ProjectTable
             data={drivers}

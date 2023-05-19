@@ -1,6 +1,8 @@
 import { fetchEngines } from "../../api/engine/engineActions";
 import { useEffect, useState } from "react";
 import { fetchNumberOfEnginePages } from "../../api/engine/engineActions";
+import { MyContext } from "../context/Context";
+import { useContext } from "react";
 
 export default function CarsModelView(props) {
 
@@ -11,12 +13,14 @@ export default function CarsModelView(props) {
     const [Error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [numberOfPaginatedPages, setNumberOfPaginatedPages] = useState(1);
+    const { numberOfPages } = useContext(MyContext);
     
     useEffect(() => {
-        fetchEngines(currentPage)
+        fetchEngines(currentPage, numberOfPages)
         .then((engines) => {
             engines.forEach((engine) => {
                 engine.id = engine.engineId;
+                engine.user = engine.userId
             });
             setEngines(engines)
         })

@@ -10,7 +10,7 @@ export default function CarDriverTable(props) {
         handleDeleteCarDriver,
     } = useViewModal(props);
 
-    const carDriverAttribuites = ["carMake", "driverName", "company", "rating", "options"];
+    const carDriverAttribuites = ["carMake", "driverName", "company", "rating", "user", "options"];
     return (
         <ProjectTable
             data={carDrivers}
@@ -20,5 +20,4 @@ export default function CarDriverTable(props) {
             handleDelete={handleDeleteCarDriver}
         />
     );
-    return null;
 }

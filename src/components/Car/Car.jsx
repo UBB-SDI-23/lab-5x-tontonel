@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../common/NavBar';
+import NavBar from '../common/NabBar/NavBar';
 import useViewModal from './CarsViewModel';
 import CarsFilter from './CarFilter/CarFilter';
 import CarsTable from './CarTable/CarTable';
@@ -59,3 +59,4 @@ export default function Car() {
         </>
     )
 }
+

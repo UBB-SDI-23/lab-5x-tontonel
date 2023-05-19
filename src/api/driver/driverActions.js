@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const fetchDrivers = async (page) => {
-    const response = await axios.get(process.env.API_URL + `/api/driver?page=${page}`);
+export const fetchDrivers = async (page, numberOfPages) => {
+    const response = await axios.get(process.env.API_URL + `/api/driver?page=${page}` + `&numberOfPages=${numberOfPages}`);
     return response.data;
 }
 

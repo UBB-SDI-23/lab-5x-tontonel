@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchCars, fetchNumberOfCarPages } from "../../api/car/carActions";
+import { MyContext } from "../context/Context";
+import { useContext } from "react";
 
 export default function CarsModelView(props) {
 
@@ -10,13 +12,15 @@ export default function CarsModelView(props) {
     const [selectedCarId, setSelectedCarId] = useState(null);
     const [numberOfPaginatedPages, setNumberOfPaginatedPages] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
+    const { numberOfPages } = useContext(MyContext);
 
     useEffect(() => {
-        fetchCars(currentPage)
+        fetchCars(currentPage, numberOfPages)
         .then((cars) => {
             cars.forEach((car) => {
                 car.engineType = car.engineId?.type;
                 car.id = car.carId;
+                car.user = car.userId;
             })
             setCars(cars);
         })

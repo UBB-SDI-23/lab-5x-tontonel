@@ -10,7 +10,7 @@ export default function EngineTable(props) {
         handleDeleteEngine,
     } = useViewModal(props);
 
-    const attribuites = ["name", "type", "capacity", "consumtion", "maxSpeed", "options"]
+    const attribuites = ["name", "type", "capacity", "consumtion", "maxSpeed", "user", "options"]
 
     return (
         <ProjectTable

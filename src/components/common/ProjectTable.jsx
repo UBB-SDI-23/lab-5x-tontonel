@@ -19,7 +19,6 @@ export default function ProjectTable(props) {
         handleDelete,
         handleSave
     } = props;
-
     return (
         <TableContainer sx={{ marginTop: "1rem"}} component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -43,6 +42,7 @@ export default function ProjectTable(props) {
                     setEditMode={setEditMode}
                     handleDelete={handleDelete}
                     handleSave={handleSave}
+                    user={elem["user"]}
                 />))}
               </StyledTableRow>
             ))}

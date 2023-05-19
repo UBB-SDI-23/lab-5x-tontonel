@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchDrivers } from "../../api/driver/driverActions";
 import { fetchNumberOfPages } from "../../api/driver/driverActions";
+import { MyContext } from "../context/Context";
+import { useContext } from "react";
 
 export default function DriverTableViewModal () {
 
@@ -11,12 +13,14 @@ export default function DriverTableViewModal () {
     const [Error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [numberOfPaginatedPages, setNumberOfPaginatedPages] = useState(1);
+    const { numberOfPages } = useContext(MyContext);
 
     useEffect(() => {
-        fetchDrivers(currentPage)
+        fetchDrivers(currentPage, numberOfPages)
         .then((drivers) => {
             drivers.forEach((driver) => {
                 driver.id = driver.driverId;
+                driver.user = driver.userId
             })
             setDrivers(drivers);
         })

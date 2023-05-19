@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchCars = async (page) => {
-    const result = await axios.get(process.env.API_URL + '/api/car?page=' + page);
+export const fetchCars = async (page, numberOfPages) => {
+    const result = await axios.get(process.env.API_URL + '/api/car?page=' + page + '&numberOfPages=' + numberOfPages);
     return result.data;
 }
 

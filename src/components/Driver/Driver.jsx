@@ -1,6 +1,6 @@
 import React from "react";
 import useViewModal from "./DriverViewModel";
-import NavBar from "../common/NavBar";
+import NavBar from "../common/NabBar/NavBar";
 import DriverTable from "./DriverTable/DriverTable";
 import AddDriver from "./AddDriver/AddDriver";
 import EditDriverModal from "./DriverModal/EditDriverModal";

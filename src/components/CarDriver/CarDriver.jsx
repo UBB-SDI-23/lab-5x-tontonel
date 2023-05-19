@@ -1,6 +1,6 @@
 import React from "react";
 import useViewModal from "./CarDriverViewModel";
-import NavBar from "../common/NavBar";
+import NavBar from "../common/NabBar/NavBar";
 import CarDriverTable from "./CarDriverTable/CarDriverTable";
 import EditCarDriverModal from "./CarDriverModal/EditCarDriverModal";
 import AddCarDriver from "./AddCarDriver/AddCarDriver";

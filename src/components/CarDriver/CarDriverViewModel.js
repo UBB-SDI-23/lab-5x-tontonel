@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { fetchCarDrivers} from "../../api/carDriver/carDriverActions";
 import { fetchNumberOfPages } from "../../api/carDriver/carDriverActions";
+import { MyContext } from "../context/Context";
+import { useContext } from "react";
 
 export default function CarsModelView(props) {
 
@@ -11,14 +13,16 @@ export default function CarsModelView(props) {
     const [Error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [numberOfPaginatedPages, setNumberOfPaginatedPages] = useState(1);
+    const { numberOfPages } = useContext(MyContext);
 
     useEffect(() => {
-        fetchCarDrivers(currentPage)
+        fetchCarDrivers(currentPage, numberOfPages)
         .then((carDrivers) => {
             carDrivers.forEach((carDriver) => {
                 carDriver.id = carDriver.carDriverId;
                 carDriver.carMake = carDriver.carId.make;
                 carDriver.driverName = carDriver.driverId.name;
+                carDriver.user = carDriver.userId
             })
             setCarDrivers(carDrivers);
         })

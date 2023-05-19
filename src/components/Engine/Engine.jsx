@@ -1,6 +1,6 @@
 import React from "react";
 import useViewModal from "./EngineViewModel";
-import NavBar from "../common/NavBar";
+import NavBar from "../common/NabBar/NavBar";
 import EngineTable from "./EngineTable/EngineTable";
 import AddEngineModal from "./AddEngine/AddEngine";
 import EditEngineModal from "./EngineModal/EditEngineModal";

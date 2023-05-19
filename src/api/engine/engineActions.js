@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const fetchEngines = async (page) => {
-    const result = await axios.get(process.env.API_URL + "/api/engine?page=" + page);
+export const fetchEngines = async (page, numberOfPages) => {
+    const result = await axios.get(process.env.API_URL + "/api/engine?page=" + page + "&numberOfPages=" + numberOfPages);
     return result.data;
 }
 

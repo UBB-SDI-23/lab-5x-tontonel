@@ -12,7 +12,7 @@ export default function CarsTable(props) {
     handleDeleteCar,
   } = useViewModal(props);
 
-  const carAttributes = ["model", "make", "color", "price", "engineType", "year", "options"];
+  const carAttributes = ["model", "make", "color", "price", "engineType", "year", "user", "options"];
 
   return (
     <>
